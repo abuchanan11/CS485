@@ -1,0 +1,7 @@
+INDEX VERSION 1.3+C:\Users\ABuchanan11\Documents\GitHub\CS485\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2035403435.index
+3433728766.index
+1178676958.index
+502745397.index
+1315171133.index
+3768803652.index
