@@ -10,6 +10,7 @@
 <%@ page import="java.io.*" %> 
 <%@ page import="db.*" %>
 
+<h1>Welcome to the Weather Website</h1>
 <form  action="index.jsp" method="get">
 Login your account:<br/><br/>
 

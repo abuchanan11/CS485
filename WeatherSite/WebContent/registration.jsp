@@ -4,32 +4,31 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Welcome to CS 485</title>
+<title>Registration</title>
 </head>
 <body>
 <%@ page import="java.io.*" %> 
 <%@ page import="db.*" %>
 
-<h1>Welcome to the Weather Website</h1>
-<form  action="index.jsp" method="get">
-Login your account:<br/><br/>
+<form action="registration.jsp" method="get">
+Register your account with us <br/><br/>
 
-User Name: <input id="user" name="user" type="text"/><br/>
-Password:  <input id="password" name="password" type="text"/><br/>
+Username: <input type="text" name="user" id="user"/><br/>
+Password: <input type="text" name="password" id="password"/><br/>
+First Name: <input type="text" name="FName" id="FName"/><br/>
+Last Name: <input type="text" name="LName" id="LName"/><br/>
 <input type="submit" Value="Submit" ></input>
 </form>
 <%
 String user=request.getParameter("user");
 String pass=request.getParameter("password");
-
+String FirstName=request.getParameter("FName");
+String LastName=request.getParameter("LName");
 if (user!= null&&!user.trim().equals("")){
 	DBentry DBentry=new DBentry();
-	boolean flag=DBentry.userlookup(user, pass);
+	boolean flag=DBentry.newUser(user, pass, FirstName, LastName);
 	if(flag) {
-		%><script type="text/javascript">window.location.replace("welcome.jsp");</script>
-		<form action="welcome.jsp" method="get">
-			<input type="hidden" name="user" value="${user}"/>
-		</form><%
+		%><script type="text/javascript">window.location.replace("welcome.jsp");</script><%
 	}
 	else { 
 		%><script type="text/javascript">window.location.replace("registration.jsp");</script><%
@@ -37,7 +36,6 @@ if (user!= null&&!user.trim().equals("")){
 	}
 }
 
-%>
-
+ %>
 </body>
 </html>
