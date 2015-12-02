@@ -126,12 +126,6 @@ public class DBentry {
 		}
 	}
 	
-	public ResultSet getTodaysWeather(String day, String city){
-		ResultSet result = selectStatement(//insert some select)
-		
-		return result;
-	}
-	
 	public static void main(String[] args) {	
 		
 	}

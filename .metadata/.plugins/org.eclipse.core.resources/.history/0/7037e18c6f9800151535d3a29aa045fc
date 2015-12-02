@@ -9,26 +9,16 @@
 <body>
 <%@ page import="java.io.*" %> 
 <%@ page import="db.*" %>
-<%@ page import="java.sql.*" %>
 
 <h1>Welcome to the Weather Website</h1>
-<div>
-	<h1>Weather for today</h1>
-	<%
-	DBentry todaysWeather = new DBentry();
-	ResultSet today = todaysWeather.getTodaysWeather;
-	%>
-</div>
-<div>
-<h2>Please log in! If you don't have an account, please enter preferred username and password.</h2>
-	<form  action="index.jsp" method="get">
-	Login to your account:<br/><br/>
-	
-	User Name: <input id="user" name="user" type="text"/><br/>
-	Password:  <input id="password" name="password" type="text"/><br/>
-	<input type="submit" Value="Submit" ></input>
-	</form>
-</div>
+<h2>Please log in! If you haven't, please </h2>
+<form  action="index.jsp" method="get">
+Login your account:<br/><br/>
+
+User Name: <input id="user" name="user" type="text"/><br/>
+Password:  <input id="password" name="password" type="text"/><br/>
+<input type="submit" Value="Submit" ></input>
+</form>
 <%
 String user=request.getParameter("user");
 String pass=request.getParameter("password");
