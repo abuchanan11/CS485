@@ -5,13 +5,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Welcome to CS 485</title>
-<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <%@ page import="java.io.*" %> 
 <%@ page import="db.*" %>
 <%@ page import="java.sql.*" %>
-<div id="wrapper">
+
 <h1>Welcome to the Weather Website</h1>
 <div>
 	<h1>Weather for today</h1>
@@ -50,6 +49,6 @@ if (user!= null&&!user.trim().equals("")){
 }
 
 %>
-</div>
+
 </body>
 </html>

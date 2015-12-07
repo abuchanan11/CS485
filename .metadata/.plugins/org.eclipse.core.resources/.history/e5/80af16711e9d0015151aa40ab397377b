@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Welcome to CS 485</title>
-<link rel="stylesheet" href="style.css">
+<script src="style.css"></script>
 </head>
 <body>
 <%@ page import="java.io.*" %> 

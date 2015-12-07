@@ -7,7 +7,6 @@ body{
 	background-color: #EFEFEF;
 	margin-right : auto;
 	margin-left : auto;
-	padding: 20px;
 	width: 1000px;
 	min-height: 500px;
 	border-radius: 15px;

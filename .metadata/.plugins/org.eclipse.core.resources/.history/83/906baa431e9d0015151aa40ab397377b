@@ -7,9 +7,8 @@ body{
 	background-color: #EFEFEF;
 	margin-right : auto;
 	margin-left : auto;
-	padding: 20px;
-	width: 1000px;
-	min-height: 500px;
+	min-width: 980px;
+	min-height: 520px;
+	max-width: 1000px;
 	border-radius: 15px;
-	border-color: black;
 }
