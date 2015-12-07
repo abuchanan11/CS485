@@ -10,22 +10,9 @@
 <%@ page import="java.io.*" %> 
 <%@ page import="java.net.*" %>
 <%@ page import="db.*" %> 
-
-<form  action="apicall.jsp" method="get">
-	<center><button value="1" name="choice">Get Current Weather</button></center>
-	<center><button value="2" name="choice">Finalize</button></center>
-</form>
-
 <% 
-	if(request.getParameter("choice") != null && Integer.parseInt(request.getParameter("choice")) == 1)
-	{
-		CurrentWeather curr = new CurrentWeather();
-		System.out.println(curr.condition);
-		System.out.println(curr.low);
-		System.out.println(curr.high);
-	}
-
-	
-%>
+	String result = CurrentWeather.get();
+	System.out.println(result);
+ %>
 </body>
 </html>
