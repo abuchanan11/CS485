@@ -16,7 +16,7 @@
 	<h1>Weather for today</h1>
 	<%
 	DBentry todaysWeather = new DBentry();
-	//ResultSet today = todaysWeather.getTodaysWeather;
+	ResultSet today = todaysWeather.getTodaysWeather;
 	%>
 </div>
 <div>

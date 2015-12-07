@@ -104,7 +104,7 @@ public class DBentry {
 	
 	public boolean userlookup (String user, String password){
 		try{
-			ResultSet results = selectStatement("SELECT * FROM weather.user WHERE username = '"+user+"' AND password = '"+password+"';");
+			ResultSet results = selectStatement("SELECT * FROM cs485_lab.users WHERE username = '"+user+"' AND password = '"+password+"';");
 			if (empty){
 				return false;
 			}else{
@@ -126,11 +126,11 @@ public class DBentry {
 		}
 	}
 	
-	//public ResultSet getTodaysWeather(String day, String city){
-		//ResultSet result = selectStatement(//insert some select)
+	public ResultSet getTodaysWeather(String day, String city){
+		ResultSet result = selectStatement(//insert some select)
 		
-		//return result;
-	//}
+		return result;
+	}
 	
 	public static void main(String[] args) {	
 		

@@ -23,7 +23,6 @@ INDEX VERSION 1.127+C:\Users\ABuchanan11\Documents\GitHub\CS485\.metadata\.plugi
 1984797805.index
 3194370155.index
 3349119677.index
-3433728766.index
 1812496562.index
 313442838.index
 2478914039.index
