@@ -8,9 +8,59 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class CurrentWeather {
-	public static String get() {
+	
+	
+	public double high;
+	public double low;
+	public double temp;
+	public String lastCall;
+	public String condition;
+	
+	public CurrentWeather() {
+		high = 0;
+		low = 300;
+	
+		lastCall = get();
+		temp = getTemp(lastCall);
+		high = getHigh(temp);
+		low = getLow(temp);
+		condition = getCondition(lastCall);
+	}
+	private double getTemp(String c) {
+		int tbegin = c.indexOf("temp") + 6;
+		int tEnd = c.indexOf(',', tbegin);
+		return Double.parseDouble(c.substring(tbegin, tEnd));
+	}
+	private String getCondition(String c) {
+		int tbegin = c.indexOf("main") + 7;
+		int tEnd = c.indexOf('\"', tbegin);
+		return c.substring(tbegin, tEnd);
+	}
+	private double getLow(double t) {
+		if(Double.compare(t, low) < 0)
+		{
+			return t;
+		}
+		else
+		{
+			return low;
+		}
+		
+	}
+	private double getHigh(double t) {
+		if(Double.compare(t, high) > 0)
+		{
+			return t;
+		}
+		else
+		{
+			return low;
+		}
+	}
+	private String get() {
 		HttpURLConnection connection = null; 
-		String targetURL = "http://api.openweathermap.org/data/2.5/weather?id=5053156&APPID=546f5b587c1c07b8c59dad683fe4bf52";
+		String targetURL = "http://api.openweathermap.org/data/2.5/weather?id=5053156&APPID=546f5b587c1c07b8c59dad683fe4bf52&units="
+				+ "Imperial";
 		
 		try {
 	    //Create connection
