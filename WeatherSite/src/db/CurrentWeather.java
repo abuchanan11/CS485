@@ -10,7 +10,7 @@ import java.net.URL;
 public class CurrentWeather {
 	public static String get() {
 		HttpURLConnection connection = null; 
-		String targetURL = "api.openweathermap.org/data/2.5/weather?id=5053156&APPID=546f5b587c1c07b8c59dad683fe4bf52";
+		String targetURL = "http://api.openweathermap.org/data/2.5/weather?id=5053156&APPID=546f5b587c1c07b8c59dad683fe4bf52";
 		
 		try {
 	    //Create connection
