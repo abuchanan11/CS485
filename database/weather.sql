@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 01, 2015 at 10:20 PM
+-- Generation Time: Dec 07, 2015 at 04:04 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -33,7 +33,15 @@ CREATE TABLE IF NOT EXISTS `cities` (
   `latitude` varchar(45) NOT NULL,
   `state` varchar(45) NOT NULL,
   PRIMARY KEY (`city_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `cities`
+--
+
+INSERT INTO `cities` (`city_id`, `name`, `longitude`, `latitude`, `state`) VALUES
+(1, 'Winona', '-91.63', '44.05', 'MN'),
+(2, 'SomePlace', '-91', '57', 'WI');
 
 -- --------------------------------------------------------
 
@@ -59,7 +67,18 @@ CREATE TABLE IF NOT EXISTS `day_forecast` (
   `type_precip` varchar(45) NOT NULL,
   `date` date NOT NULL,
   PRIMARY KEY (`forecast_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `day_forecast`
+--
+
+INSERT INTO `day_forecast` (`forecast_id`, `high`, `low`, `type_precip`, `date`) VALUES
+(1, '42', '37', 'cloudy', '0000-00-00'),
+(2, '42', '37', 'cloudy', '2015-12-06'),
+(3, '48', '35', 'cloudy', '2015-12-05'),
+(4, '51', '24', 'sunny', '2015-12-04'),
+(5, '35', '28', 'sunny', '2015-12-02');
 
 -- --------------------------------------------------------
 
@@ -117,12 +136,20 @@ CREATE TABLE IF NOT EXISTS `reviews` (
 --
 
 CREATE TABLE IF NOT EXISTS `user` (
-  `username` int(16) NOT NULL,
+  `username` varchar(20) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` int(32) NOT NULL,
-  `cities_city_id` int(11) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`cities_city_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  `cities_city_id` int(11) NOT NULL,
+  PRIMARY KEY (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`username`, `email`, `password`, `cities_city_id`) VALUES
+('admin', 'admin@skies.com', 0, 1),
+('weather_lover1959', 'outdoordad1959@yahoo.com', 12345, 1);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
